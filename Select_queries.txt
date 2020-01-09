@@ -1,9 +1,33 @@
-1. SELECT * FROM public.certificate
-2. select firstname as First, lastname as Last, email from public.person;
-3. select firstname as First, lastname as Last, email from public.person order by last DESC;
-4. select lastname as last, firstname as first, email, city from public.person 
+1. Return everything from the certificate table.
+SELECT * FROM public.certificate
+2. Return the first name, last name and email, from everyone in person. Alias the first name and last name columns as “First” and “Last.”
+select firstname as First, lastname as Last, email from public.person;
+3. Return the same as for 2 but sort it by lastname in a descending order.
+select firstname as First, lastname as Last, email from public.person order by last DESC;
+4. Return the last name, first name, email and city for everyone who lives in Seattle.
+select lastname as last, firstname as first, email, city from public.person 
 where person.city like 'Seattle';
-5. select lastname as last, firstname as first, email, city from public.person 
+5. Return the same as for 4, but only for those added in February 2017.
+select lastname as last, firstname as first, email, city from public.person 
 where person.city like 'Seattle' and person.dateadded 
 between '2017-02-01' and '2017-02-28';
-6.
+6. Who are the people in the database who live in Washington (WA), Oregon (OR) or California (CA)?
+select lastname as last, firstname as first from public.person 
+where person.state like 'WA'
+or person.state like 'OR'
+or person.state like 'CA';
+7.  Which instructional areas don’t have a description?
+SELECT * FROM public.instructionalarea
+where instructionalarea.description is  NULL;
+8. Which instructional areas do have a description?
+SELECT * FROM public.instructionalarea
+where instructionalarea.description is not NULL;
+9. List all the people whose last name has a double “nn” somewhere in the last name.
+SELECT * FROM public.person
+where person.lastname like '%nn%';
+10. Which courses have “Python” in the course description?
+SELECT * FROM public.course
+where course.coursedescription like '%Python%'
+11. List only unduplicated students for Fall quarter 2018.
+
+
