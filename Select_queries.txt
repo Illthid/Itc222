@@ -1,3 +1,9 @@
 1. SELECT * FROM public.certificate
 2. select firstname as First, lastname as Last, email from public.person;
 3. select firstname as First, lastname as Last, email from public.person order by last DESC;
+4. select lastname as last, firstname as first, email, city from public.person 
+where person.city like 'Seattle';
+5. select lastname as last, firstname as first, email, city from public.person 
+where person.city like 'Seattle' and person.dateadded 
+between '2017-02-01' and '2017-02-28';
+6.
