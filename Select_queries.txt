@@ -29,5 +29,6 @@ where person.lastname like '%nn%';
 SELECT * FROM public.course
 where course.coursedescription like '%Python%'
 11. List only unduplicated students for Fall quarter 2018.
+select distinct studentkey from public.roster
 
 
