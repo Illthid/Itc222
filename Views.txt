@@ -70,7 +70,9 @@ VALUES(
 	'212 Mercer Avenue', 'New York City', 'NY',
 	00234, 1035552310, current_timestamp
 );
-ERROR: new row violates check option for view "people" DETAIL: Failing row contains (406, Norman, Rachel, rachelnorman@msn.com, 212 Mercer Avenue, New York City, NY, 234, 1035552310 , 2019-02-14, t). SQL state: 44000
+ERROR:  new row violates check option for view "people"
+DETAIL:  Failing row contains (409, Norman, Rachel, rachelnorman@msn.com, 212 Mercer Avenue, New York City, NY, 234, 1035552310    , 2020-02-18, t).
+SQL state: 44000
 
 8. Create a MATERIALIZED VIEW in the instructorschema that includes the first name, last name, student start date and status of every student.
 CREATE MATERIALIZED VIEW instructorschema.studentstatus
